@@ -1,3 +1,6 @@
+// src/script.js
+import { supabase } from './supabaseClient.js';
+
 document.addEventListener("DOMContentLoaded", () => {
   // Floating Chat Icon Logic
   const chatIcon = document.getElementById("chatIcon");
@@ -33,8 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Get Quote Button Logic
   const getQuoteBtn = document.getElementById("getQuote");
   if (getQuoteBtn) {
-    getQuoteBtn.addEventListener("click", () => {
+    getQuoteBtn.addEventListener("click", async () => {
       const serviceType = document.getElementById("serviceType").value;
+      const roomSize = document.getElementById("roomSize").value || "N/A";
+      const specialRequest = document.getElementById("specialRequest").value || "N/A";
       const priceRange = pricingData[serviceType]?.range;
 
       if (!priceRange || priceRange[0] === 0) {
@@ -44,32 +49,48 @@ document.addEventListener("DOMContentLoaded", () => {
           `Estimated cost for ${serviceType} is between ₦${priceRange[0].toLocaleString()} – ₦${priceRange[1].toLocaleString()} depending on the size and scope.`
         );
       }
+
+      // Store quote in Supabase
+      try {
+        await supabase.from('quote_requests').insert([
+          {
+            service: serviceType,
+            room_size: roomSize,
+            special_request: specialRequest,
+            is_custom: false,
+          }
+        ]);
+      } catch (err) {
+        console.error('Failed to save quote request:', err);
+      }
     });
   }
 
-  import { supabase } from './supabaseClient.js'; // if you're using ES modules
-
-// Inside each button handler:
-await supabase.from('quote_requests').insert([
-  {
-    service: serviceType,
-    room_size: roomSize,
-    special_request: specialRequest,
-    is_custom: true, // or false if from "Get Instant Quote"
-  },
-]);
-  
   // Custom Quote Button Logic
   const customQuoteBtn = document.getElementById("customQuote");
   if (customQuoteBtn) {
-    customQuoteBtn.addEventListener("click", () => {
+    customQuoteBtn.addEventListener("click", async () => {
       const serviceType = document.getElementById("serviceType").value;
       const roomSize = document.getElementById("roomSize").value || "N/A";
       const specialRequest = document.getElementById("specialRequest").value || "N/A";
 
+      // Save custom quote request to Supabase
+      try {
+        await supabase.from('quote_requests').insert([
+          {
+            service: serviceType,
+            room_size: roomSize,
+            special_request: specialRequest,
+            is_custom: true,
+          }
+        ]);
+      } catch (err) {
+        console.error('Failed to save custom quote request:', err);
+      }
+
+      // Redirect to WhatsApp
       const message = `Hello Tutchonce, I'm interested in your ${serviceType} service. Room Size: ${roomSize}. Special Request: ${specialRequest}. Could you provide me with a quotation?`;
       const whatsappURL = `https://wa.me/+2348025058426?text=${encodeURIComponent(message)}`;
-
       window.location.href = whatsappURL;
     });
   }

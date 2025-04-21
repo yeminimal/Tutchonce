@@ -30,10 +30,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Security headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' dat[...]
-
-    <!-- Link the styles.css file -->
-    <link rel="stylesheet" href="src/styles/styles.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://cdn.gpteng.co https://www.googletagmanager.com; connect-src 'self' https://ravzvjtprjsuuoetplre.supabase.co https://www.google-analytics.com">
   </head>
 
   <body>
@@ -74,33 +71,28 @@
     <div id="chatModal" class="chat-modal" style="display: none;">
       <div class="chat-modal-content">
         <h3>Request a Quote</h3>
-        <!-- Dropdown for Service Selection -->
         <label for="serviceType">Select Service:</label>
-<select id="serviceType">
-  <option value="Post-construction cleaning">Post-construction cleaning</option>
-  <option value="Residential cleaning">Residential cleaning</option>
-  <option value="Commercial cleaning">Commercial cleaning</option>
-  <option value="Move-in/Move-out cleaning">Move-in/Move-out cleaning</option>
-  <option value="Deep cleaning">Deep cleaning</option>
-  <option value="Fumigation">Fumigation</option>
-  <option value="Janitorial services">Janitorial services</option>
-  <option value="Event clean-up">Event clean-up</option>
-  <option value="Facility maintenance">Facility maintenance</option>
-  <option value="Custom cleaning request">Custom cleaning request</option>
-</select>
+        <select id="serviceType">
+          <option value="Post-construction cleaning">Post-construction cleaning</option>
+          <option value="Residential cleaning">Residential cleaning</option>
+          <option value="Commercial cleaning">Commercial cleaning</option>
+          <option value="Move-in/Move-out cleaning">Move-in/Move-out cleaning</option>
+          <option value="Deep cleaning">Deep cleaning</option>
+          <option value="Fumigation">Fumigation</option>
+          <option value="Janitorial services">Janitorial services</option>
+          <option value="Event clean-up">Event clean-up</option>
+          <option value="Facility maintenance">Facility maintenance</option>
+          <option value="Custom cleaning request">Custom cleaning request</option>
+        </select>
 
-        <!-- Optional Inputs -->
         <label for="roomSize">Number of Rooms/Size (optional):</label>
         <input type="text" id="roomSize" placeholder="e.g., 3-bedroom flat" />
 
         <label for="specialRequest">Special Request (optional):</label>
         <textarea id="specialRequest" placeholder="Describe your request"></textarea>
 
-        <!-- Buttons -->
         <button id="getQuote" class="quote-btn">Get Instant Quote</button>
         <button id="customQuote" class="quote-btn">Request Custom Quote</button>
-
-        <!-- Close Modal -->
         <button id="closeModal" class="close-btn">Close</button>
       </div>
     </div>

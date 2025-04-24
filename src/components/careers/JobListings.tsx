@@ -1,5 +1,5 @@
 import React from 'react';
-import BlogCard from './BlogCard';
+import BlogCard from '@/components/blog/BlogCard';
 import { BlogPost } from '@/components/admin/blog/types';
 
 interface BlogListProps {

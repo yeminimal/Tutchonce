@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase } from './supabaseClient';
+import { supabase } from '@/supabase/supabaseClient';
 import { CareerPost } from './types';
 import { toast } from "@/components/ui/use-toast";
 

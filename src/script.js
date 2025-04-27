@@ -1,5 +1,5 @@
 // src/script.js
-import { supabase } from '../supabase/supabaseClient.js';
+import { supabase } from './supabaseClient.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   // Floating Chat Icon Logic

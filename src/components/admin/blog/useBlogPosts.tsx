@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import sanitizeHtml from 'sanitize-html';
-import { supabase } from '@/supabase/supabaseClient.ts';
+import { supabase } from '../../../supabase/supabaseClient';
 import { BlogPost } from './types';
 import { useToast } from '@/hooks/use-toast';
 

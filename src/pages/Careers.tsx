@@ -40,16 +40,3 @@ useEffect(() => {
     }
   };
 }, []);
-
-return (
-    <div>
-      <Navbar />
-      <CareerHero />
-      <CareerBenefits />
-      <JobListings />
-      <Footer />
-    </div>
-  );
-};
-
-export default Careers;

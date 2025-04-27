@@ -1,5 +1,5 @@
-// Update the import to point directly to the TypeScript file
-import { supabase } from './supabase/supabaseClient.ts';
+// Import the Supabase client from the correct path
+import { supabase } from '@/supabase/supabaseClient';
 
 document.addEventListener("DOMContentLoaded", () => {
   // Floating Chat Icon Logic

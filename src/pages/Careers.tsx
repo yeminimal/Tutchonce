@@ -12,31 +12,50 @@ const Careers = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [jobs, setJobs] = useState<CareerPost[]>([]);
 
-useEffect(() => {
-  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-      } else {
-        entry.target.classList.remove('in-view'); // Optional: Debugging
-      }
+  useEffect(() => {
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        } else {
+          entry.target.classList.remove('in-view');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
     });
-  };
 
-  const observer = new IntersectionObserver(handleIntersection, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px',
-  });
-
-  if (sectionRef.current) {
-    const elements = sectionRef.current.querySelectorAll('.animate-reveal');
-    elements.forEach(el => observer.observe(el));
-  }
-
-  return () => {
     if (sectionRef.current) {
       const elements = sectionRef.current.querySelectorAll('.animate-reveal');
-      elements.forEach(el => observer.unobserve(el));
+      elements.forEach(el => observer.observe(el));
     }
-  };
-}, []);
+
+    return () => {
+      if (sectionRef.current) {
+        const elements = sectionRef.current.querySelectorAll('.animate-reveal');
+        elements.forEach(el => observer.unobserve(el));
+      }
+    };
+  }, []);
+
+  // Your UI goes here!
+  return (
+    <>
+      <Helmet>
+        <title>Careers | Tutchonce</title>
+      </Helmet>
+      <Navbar />
+      <div ref={sectionRef}>
+        <CareerHero />
+        <CareerBenefits />
+        <JobListings jobs={jobs} />
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export default Careers;

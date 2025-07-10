@@ -1,69 +1,78 @@
-# Welcome to your Lovable project
+# 🧼 Tutchonce Cleaning Services
 
-## Project info
+Welcome to the official repository for **Tutchonce Cleaning Services** — a professional, Nigerian-based cleaning company providing top-tier residential, commercial, and post-construction cleaning solutions.
 
-**URL**: https://lovable.dev/projects/9c1f047b-b1da-49af-a329-039c50e21971
+---
 
-## How can I edit this code?
+## 🚀 Live Website
 
-There are several ways of editing your application.
+👉 [Visit the Website](https://www.tutchonce.com.ng)
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9c1f047b-b1da-49af-a329-039c50e21971) and start prompting.
+## 🧹 About Us
 
-Changes made via Lovable will be committed automatically to this repo.
+**Tutchonce Cleaning Services** is committed to transforming living and workspaces into healthier, fresher environments. We specialize in:
 
-**Use your preferred IDE**
+- Residential Cleaning  
+- Commercial & Office Cleaning  
+- Post-Construction Cleanup  
+- Move-in/Move-out Services  
+- Janitorial Services  
+- Fumigation & Deep Cleaning  
+- Event Cleanups  
+- Facility Maintenance
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Every service is delivered by well-trained professionals using industry-standard tools and eco-safe products.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 📦 Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+This website is built with:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **React + TypeScript**
+- **Tailwind CSS**
+- **Vite** (for build & dev)
+- **ShadCN/UI** (for components)
+- **Supabase** (for data handling where needed)
+- **Vercel** (for deployment)
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 📱 Features
 
-**Edit a file directly in GitHub**
+- Responsive design optimized for mobile, tablet, and desktop
+- Floating chatbot modal for instant service quotes
+- SEO-optimized content and meta tags
+- Embedded WhatsApp CTA integration
+- Service showcase with subtle animations
+- Modern UI with consistent branding
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 📩 Contact
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+For inquiries, collaborations, or suggestions:
 
-## What technologies are used for this project?
+- 🌐 Website: [https://www.tutchonce.com.ng](https://www.tutchonce.com.ng)  
+- 📧 Email: [tutchoncecleaningservices@gmail.com](mailto:tutchoncecleaningservices@gmail.com)  
+- 📞 Phone: +234 802 505 8426  
+- 📱 WhatsApp: [Chat Now](https://wa.me/+2348025058426)
 
-This project is built with .
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 👨‍🎨 Designed By
 
-## How can I deploy this project?
+**Williams Martins ([@yeminimal](https://x.com/yeminimal))**  
+Specializing in brand & product design with a focus on clarity, function, and elegance.
 
-Simply open [Lovable](https://lovable.dev/projects/9c1f047b-b1da-49af-a329-039c50e21971) and click on Share -> Publish.
+---
 
-## I want to use a custom domain - is that possible?
+## 📄 License
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+This project is licensed for private and client use only. Please contact the maintainer for collaborations or inquiries.
+
+---
+
+> “Where others see dirt, we see potential.” – *Tutchonce Cleaning Services*

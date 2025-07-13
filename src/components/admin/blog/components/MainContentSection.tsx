@@ -59,7 +59,7 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
                 onChange={(value) => setCurrentPost({...currentPost, content: value})}
                 placeholder="Write your post content here..."
                 minHeight="400px"
-                onImageUpload={handleImageUpload}
+                
               />
             </div>
           </div>

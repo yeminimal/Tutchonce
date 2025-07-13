@@ -1,8 +1,6 @@
-import React, { useCallback, useState } from 'react';
-import { Slate, Editable, withReact } from 'slate-react';
-import { createEditor, Descendant } from 'slate';
+import React from 'react';
+import { Textarea } from '@/components/ui/textarea';
 import { cn } from '@/lib/utils';
-import EditorStyles from './components/EditorStyles';
 
 interface AdvancedEditorProps {
   value: string;
@@ -19,32 +17,14 @@ const AdvancedEditor: React.FC<AdvancedEditorProps> = ({
   className,
   minHeight = '300px',
 }) => {
-  const [editorValue, setEditorValue] = useState<Descendant[]>([
-    { children: [{ text: value }] },
-  ]);
-  const editor = React.useMemo(() => withReact(createEditor()), []);
-
-  const handleChange = useCallback(
-    (newValue: Descendant[]) => {
-      setEditorValue(newValue);
-      const plainText = newValue
-        .map((node) => 'text' in node ? node.text : '')
-        .join('\n');
-      onChange(plainText);
-    },
-    [onChange]
-  );
-
   return (
-    <div className={cn('advanced-editor', className)}>
-      <EditorStyles minHeight={minHeight} />
-      <Slate editor={editor} initialValue={editorValue} onChange={handleChange}>
-        <Editable
-          placeholder={placeholder}
-          style={{ minHeight, padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }}
-        />
-      </Slate>
-    </div>
+    <Textarea
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      placeholder={placeholder}
+      className={cn('font-mono text-sm', className)}
+      style={{ minHeight }}
+    />
   );
 };
 

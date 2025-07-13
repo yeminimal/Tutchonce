@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import sanitizeHtml from 'sanitize-html';
-import { supabase } from './supabaseClient';
 import { BlogPost } from './types';
 import { useToast } from '@/hooks/use-toast';
 
@@ -13,28 +12,46 @@ export const useBlogPosts = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    // Fetch posts from Supabase
-    const fetchPosts = async () => {
-      const { data, error } = await supabase.from('blog_posts').select('*');
-      if (error) {
-        console.error('Error fetching blog posts:', error.message);
-        setPosts([]);
-      } else {
-        setPosts(data || []);
+    // Load demo posts since we removed Supabase
+    const demoPosts: BlogPost[] = [
+      {
+        id: '1',
+        title: 'The Ultimate Guide to Deep Cleaning Your Home',
+        excerpt: 'Learn the best practices for giving your home a thorough deep clean that will leave every surface sparkling.',
+        content: '<p>A comprehensive guide to deep cleaning your home...</p>',
+        author: 'Tutchonce Team',
+        date: '2024-01-15',
+        readingTime: '8 min read',
+        image: '/lovable-uploads/c5442ef4-b436-4d8d-8bc2-c63c107e1d08.png',
+        tags: ['cleaning', 'home', 'tips'],
+        status: 'published',
+        seoTitle: 'The Ultimate Guide to Deep Cleaning Your Home',
+        seoDescription: 'Learn the best practices for giving your home a thorough deep clean',
+        seoKeywords: 'home cleaning, deep cleaning, cleaning tips'
+      },
+      {
+        id: '2',
+        title: 'Commercial Cleaning Best Practices',
+        excerpt: 'Discover how professional commercial cleaning can improve your workspace environment and employee productivity.',
+        content: '<p>Commercial cleaning best practices...</p>',
+        author: 'Tutchonce Team',
+        date: '2024-01-10',
+        readingTime: '6 min read',
+        image: '/lovable-uploads/e36c2a0a-ff4e-4be4-bf6c-0366d214a280.png',
+        tags: ['commercial', 'office', 'productivity'],
+        status: 'published',
+        seoTitle: 'Commercial Cleaning Best Practices',
+        seoDescription: 'Professional commercial cleaning tips for better workplace environment',
+        seoKeywords: 'commercial cleaning, office cleaning, workplace'
       }
-    };
-
-    fetchPosts();
+    ];
+    setPosts(demoPosts);
   }, []);
 
   const savePosts = async (updatedPosts: BlogPost[]) => {
-    const { error } = await supabase.from('blog_posts').upsert(updatedPosts);
-    if (error) {
-      console.error('Error saving blog posts:', error.message);
-    } else {
-      setPosts(updatedPosts);
-      console.log('Saved blog posts:', updatedPosts);
-    }
+    // Mock save operation since we removed Supabase
+    setPosts(updatedPosts);
+    console.log('Saved blog posts (demo mode):', updatedPosts);
   };
 
   const handleNewPost = () => {
@@ -154,5 +171,9 @@ export const useBlogPosts = () => {
     handleDeletePost,
     handleSubmit,
     handleBackToList,
+    handleImageUpload: async (file: File): Promise<string> => {
+      // Mock image upload since we removed Supabase
+      return Promise.resolve('/lovable-uploads/placeholder.png');
+    },
   };
 };

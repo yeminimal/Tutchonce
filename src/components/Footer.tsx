@@ -138,12 +138,14 @@ const Footer = () => {
             </Link>
             <Link to="/terms-of-service" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-brand-primary transition-colors text-sm">
               Terms of Service
-            <li>
-              <a
-               href="https://yeminimal.site/" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-brand-primary transition-colors text-sm">
-               Designed by Williams Martins
-              </a>
-            </li>
+            </Link>
+            <a
+              href="https://yeminimal.site/" 
+              onClick={() => window.scrollTo(0, 0)} 
+              className="text-muted-foreground hover:text-brand-primary transition-colors text-sm"
+            >
+              Designed by Williams Martins
+            </a>
           </div>
         </div>
       </div>

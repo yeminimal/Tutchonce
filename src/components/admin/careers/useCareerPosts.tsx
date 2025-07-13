@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { supabase } from './supabaseClient';
 import { CareerPost } from './types';
 import { toast } from "@/components/ui/use-toast";
 
@@ -26,27 +25,30 @@ export const useCareerPosts = () => {
   const [statusFilter, setStatusFilter] = useState<string>('all');
 
   useEffect(() => {
-    // Fetch posts from Supabase
-    const fetchPosts = async () => {
-      const { data, error } = await supabase.from('career_posts').select('*');
-      if (error) {
-        console.error('Error fetching career posts:', error.message);
-        setPosts([]);
-      } else {
-        setPosts(data || []);
+    // Load demo career posts since we removed Supabase
+    const demoPosts: CareerPost[] = [
+      {
+        id: '1',
+        title: 'Senior Cleaning Technician',
+        description: 'Join our team as a Senior Cleaning Technician and lead cleaning operations.',
+        location: 'Lagos, Nigeria',
+        type: 'Full-time',
+        salary: '₦150,000 - ₦200,000',
+        requirements: 'Minimum 3 years experience in professional cleaning',
+        qualifications: 'Certificate in cleaning services preferred',
+        benefits: 'Health insurance, performance bonuses',
+        applicationProcess: 'Send CV to careers@tutchonce.com',
+        date: '2024-01-10',
+        status: 'active'
       }
-    };
-
-    fetchPosts();
+    ];
+    setPosts(demoPosts);
   }, []);
 
   const savePosts = async (updatedPosts: CareerPost[]) => {
-    const { error } = await supabase.from('career_posts').upsert(updatedPosts);
-    if (error) {
-      console.error('Error saving career posts:', error.message);
-    } else {
-      setPosts(updatedPosts);
-    }
+    // Mock save operation since we removed Supabase
+    setPosts(updatedPosts);
+    console.log('Saved career posts (demo mode):', updatedPosts);
   };
 
   const handleNewPost = () => {
@@ -123,5 +125,9 @@ export const useCareerPosts = () => {
     handleEditPost,
     handleDeletePost,
     handleSubmit,
+    handleBackToList: () => {
+      setCurrentPost(null);
+      setView('list');
+    },
   };
 };

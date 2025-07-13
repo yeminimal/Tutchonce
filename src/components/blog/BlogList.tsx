@@ -12,10 +12,11 @@ const BlogList: React.FC<BlogListProps> = ({ blogPosts, onOpenPost }) => {
     <div className="container mx-auto px-4">
       {blogPosts.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
+          {blogPosts.map((post, index) => (
             <BlogCard 
               key={post.id} 
               post={post} 
+              index={index}
               onOpenPost={onOpenPost} 
             />
           ))}

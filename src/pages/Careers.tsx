@@ -6,11 +6,32 @@ import { CareerPost } from '@/components/admin/careers/types';
 import CareerHero from '@/components/careers/CareerHero';
 import CareerBenefits from '@/components/careers/CareerBenefits';
 import JobListings from '@/components/careers/JobListings';
-import { supabase } from '@/integrations/supabase/client';
+
 
 const Careers = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [jobs, setJobs] = useState<CareerPost[]>([]);
+
+  // Load demo jobs since we removed Supabase
+  useEffect(() => {
+    const demoJobs: CareerPost[] = [
+      {
+        id: '1',
+        title: 'Senior Cleaning Technician',
+        description: 'Join our team as a Senior Cleaning Technician and lead cleaning operations.',
+        location: 'Lagos, Nigeria',
+        type: 'Full-time',
+        salary: '₦150,000 - ₦200,000',
+        requirements: 'Minimum 3 years experience in professional cleaning',
+        qualifications: 'Certificate in cleaning services preferred',
+        benefits: 'Health insurance, performance bonuses',
+        applicationProcess: 'Send CV to careers@tutchonce.com',
+        date: '2024-01-10',
+        status: 'active'
+      }
+    ];
+    setJobs(demoJobs);
+  }, []);
 
   useEffect(() => {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {

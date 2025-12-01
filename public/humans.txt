@@ -1,0 +1,16 @@
+/* TEAM */
+Company: Tutchonce Cleaning Services
+Location: Nigeria
+Contact: tutchoncecleaningservices@gmail.com
+Phone: +234 802 505 8426
+
+/* SITE */
+Last update: 2025-12-01
+Language: English
+Technology: React, Vite, Tailwind CSS, TypeScript, Lovable Cloud
+Standards: HTML5, CSS3, ES2020
+Components: Shadcn UI, Radix UI
+Hosting: Lovable Platform
+
+/* THANKS */
+To all our loyal customers across Nigeria who trust us with their spaces.

@@ -1,70 +1,105 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { MapPin, Clock, ChevronRight } from 'lucide-react';
+import { MapPin, Clock, DollarSign, ChevronRight } from 'lucide-react';
 import { CareerPost } from '@/components/admin/careers/types';
 
 interface JobListingsProps {
   jobs: CareerPost[];
 }
 
-const JobListings = ({ jobs }: JobListingsProps) => {
+const JobListings: React.FC<JobListingsProps> = ({ jobs }) => {
   return (
-    <section className="py-16 px-6 bg-gray-50">
-      <div className="container max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-brand-primary text-center mb-12 animate-reveal">
-          Open Positions
-        </h2>
-        
-        {jobs.length > 0 ? (
-          <div className="space-y-6">
-            {jobs.map((job) => (
-              <div key={job.id} className="bg-white p-6 rounded-2xl shadow-card animate-reveal">
-                <div className="flex flex-col md:flex-row md:items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold text-brand-primary">{job.title}</h3>
-                    <div className="flex flex-wrap gap-4 mt-2">
-                      <span className="inline-flex items-center text-sm text-muted-foreground">
-                        <MapPin size={16} className="mr-1" /> {job.location}
-                      </span>
-                      <span className="inline-flex items-center text-sm text-muted-foreground">
-                        <Clock size={16} className="mr-1" /> {job.type}
-                      </span>
-                    </div>
-                    <p className="mt-4 text-muted-foreground">{job.description}</p>
-                    
-                    <div className="mt-4">
-                      <h4 className="font-medium text-brand-primary mb-2">Requirements:</h4>
-                      <div className="text-sm text-muted-foreground space-y-1">
-                        {job.requirements}
+    <section className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-primary mb-6">
+            Current Openings
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Join our team and help us provide exceptional cleaning services across Nigeria
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          {jobs.length > 0 ? (
+            <div className="space-y-6">
+              {jobs.map((job, index) => (
+                <div 
+                  key={job.id} 
+                  className="bg-white rounded-2xl shadow-card p-8 animate-reveal card-hover"
+                  style={{ transitionDelay: `${200 + index * 100}ms` }}
+                >
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                    <div className="flex-1">
+                      <div className="flex items-center mb-3">
+                        <span className="inline-block px-3 py-1 bg-brand-light text-brand-primary text-sm font-medium rounded-full mr-3">
+                          {job.type}
+                        </span>
+                        <span className="inline-block px-3 py-1 bg-green-100 text-green-700 text-sm font-medium rounded-full">
+                          {job.status === 'active' ? 'Open' : 'Closed'}
+                        </span>
+                      </div>
+                      
+                      <h3 className="text-2xl font-semibold text-brand-primary mb-3">
+                        {job.title}
+                      </h3>
+                      
+                      <p className="text-muted-foreground mb-4 line-clamp-2">
+                        {job.description}
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                        <div className="flex items-center">
+                          <MapPin size={16} className="mr-2 text-brand-primary" />
+                          <span>{job.location}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <Clock size={16} className="mr-2 text-brand-primary" />
+                          <span>{job.type}</span>
+                        </div>
+                        {job.salary && (
+                          <div className="flex items-center">
+                            <DollarSign size={16} className="mr-2 text-brand-primary" />
+                            <span>{job.salary}</span>
+                          </div>
+                        )}
                       </div>
                     </div>
+                    
+                    <div className="mt-6 lg:mt-0 lg:ml-8">
+                      <Button 
+                        className="bg-brand-primary hover:bg-brand-secondary text-white px-8 py-3"
+                        onClick={() => {
+                          // For demo purposes, just show an alert
+                          alert(`Apply for ${job.title} - Send your CV to careers@tutchonce.com`);
+                        }}
+                      >
+                        Apply Now <ChevronRight size={16} className="ml-2" />
+                      </Button>
+                    </div>
                   </div>
-                  
-                  <Button
-                    className="mt-6 md:mt-0 bg-brand-primary hover:bg-brand-secondary group"
-                  >
-                    Apply Now
-                    <ChevronRight className="ml-1 group-hover:translate-x-1 transition-transform" size={16} />
-                  </Button>
                 </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-16 bg-white rounded-2xl shadow-card">
-            <h3 className="text-xl font-semibold text-brand-primary mb-2">No Open Positions</h3>
-            <p className="text-muted-foreground">We don't have any openings at the moment. Please check back later!</p>
-          </div>
-        )}
-        
-        <div className="mt-12 text-center">
-          <p className="text-lg text-muted-foreground mb-6 animate-reveal">
-            Don't see a position that matches your skills? We're always looking for talented individuals to join our team.
-          </p>
-          <Button variant="outline" className="border-brand-primary text-brand-primary hover:bg-brand-light">
-            Send Speculative Application
-          </Button>
+              ))}
+            </div>
+          ) : (
+            <div className="bg-white rounded-2xl shadow-card p-12 text-center">
+              <h3 className="text-2xl font-semibold text-brand-primary mb-4">
+                No Open Positions
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                We're not currently hiring, but we're always looking for talented individuals to join our team.
+              </p>
+              <Button 
+                variant="outline" 
+                className="border-brand-primary text-brand-primary hover:bg-brand-light"
+                onClick={() => {
+                  window.location.href = 'mailto:careers@tutchonce.com?subject=General Application';
+                }}
+              >
+                Send Us Your CV
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>

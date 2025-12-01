@@ -1,0 +1,61 @@
+
+/* Animations */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Animation for floating objects */
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: floating 3s ease-in-out infinite;
+}
+
+/* Default visibility for animate-reveal */
+.animate-reveal {
+  opacity: 1; /* Ensure visible */
+  transform: none; /* Reset transform */
+  visibility: visible; /* Ensure it's not hidden */
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+/* When in view, apply animation */
+.in-view {
+  opacity: 1; /* Ensure visible */
+  transform: translateY(0); /* Reset transform */
+}

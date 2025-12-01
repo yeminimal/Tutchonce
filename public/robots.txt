@@ -1,6 +1,38 @@
+# Tutchonce Cleaning Services - Professional Cleaning in Nigeria
+# Last Updated: 2025-12-01
 
 User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /admin/
 
+# Explicitly Allow AI Crawlers for Enhanced Discoverability
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Cohere-AI
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# Sitemaps
 Sitemap: https://www.tutchonce.com.ng/sitemap.xml
+
+# LLMs.txt for AI Systems
+LLMS-txt: https://www.tutchonce.com.ng/llms.txt

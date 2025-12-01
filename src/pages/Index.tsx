@@ -43,21 +43,29 @@ const Index = () => {
     <div className="min-h-screen bg-background overflow-fix">
       <Helmet>
         <title>Tutchonce Cleaning Services | Professional Home & Office Cleaning in Nigeria</title>
-        <meta name="description" content="Tutchonce offers premium cleaning services across Nigeria. Specializing in residential, commercial, post-construction, and facility management with reliable, affordable service." />
-        <meta name="keywords" content="cleaning services Nigeria, house cleaning Nigeria, professional cleaners Lagos, home cleaning service Abuja, apartment cleaning Nigeria, deep cleaning services, affordable cleaning services, residential cleaning Nigeria, office cleaning Nigeria, best cleaning company Nigeria, Tutchonce cleaning, eco-friendly cleaning, reliable cleaning service, janitorial services, post construction cleaning, move in move out cleaning" />
+        <meta name="description" content="Nigeria's premier professional cleaning company. Eco-friendly residential & commercial cleaning in Lagos, Abuja. 100% satisfaction guarantee. Same-day service available. Book now!" />
+        <meta name="keywords" content="cleaning services Nigeria, professional cleaners Lagos, house cleaning Abuja, office cleaning Nigeria, post construction cleaning Lagos, fumigation services Nigeria, janitorial services Lagos, affordable home cleaning services Nigeria, best cleaning company in Lagos, move in move out cleaning Nigeria, eco-friendly cleaning services Abuja, deep cleaning services Nigeria, facility management Nigeria, residential cleaning Lagos, commercial cleaning Abuja" />
         <meta name="author" content="Tutchonce Cleaning Services" />
         <meta property="og:title" content="Tutchonce Cleaning Services | Professional Home & Office Cleaning in Nigeria" />
-        <meta property="og:description" content="Transform your space with premium cleaning services from Tutchonce. Serving all areas across Nigeria with reliable, professional cleaning solutions." />
+        <meta property="og:description" content="Transform your space with Nigeria's premier cleaning service. Eco-friendly products, trained professionals, 100% satisfaction guarantee. Serving Lagos, Abuja & nationwide." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tutchonce.com" />
-        <meta property="og:image" content="/lovable-uploads/06012ea1-8e1f-43a9-9839-a10a76d6f3df.png" />
+        <meta property="og:url" content="https://www.tutchonce.com.ng" />
+        <meta property="og:image" content="https://www.tutchonce.com.ng/og-image.png" />
+        <meta property="og:locale" content="en_NG" />
+        <meta property="og:site_name" content="Tutchonce Cleaning Services" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Tutchonce Cleaning Services | Professional Home & Office Cleaning in Nigeria" />
-        <meta name="twitter:description" content="Professional cleaning services for homes and businesses across Nigeria. Book your cleaning today!" />
-        <meta name="twitter:image" content="/lovable-uploads/06012ea1-8e1f-43a9-9839-a10a76d6f3df.png" />
+        <meta name="twitter:site" content="@tutchonceclean" />
+        <meta name="twitter:title" content="Tutchonce Cleaning Services | Professional Cleaning in Nigeria" />
+        <meta name="twitter:description" content="Nigeria's premier professional cleaning company. Eco-friendly residential & commercial cleaning. 100% satisfaction guarantee." />
+        <meta name="twitter:image" content="https://www.tutchonce.com.ng/og-image.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         <meta name="theme-color" content="#228977" />
-        <link rel="canonical" href="https://tutchonce.com" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="geo.region" content="NG" />
+        <meta name="geo.placename" content="Nigeria" />
+        <link rel="canonical" href="https://www.tutchonce.com.ng" />
+        <link rel="alternate" hrefLang="en-ng" href="https://www.tutchonce.com.ng" />
       </Helmet>
       
       <Navbar />

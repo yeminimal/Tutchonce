@@ -66,7 +66,15 @@ const Careers = () => {
   return (
     <>
       <Helmet>
-        <title>Careers | Tutchonce</title>
+        <title>Careers at Tutchonce | Join Nigeria's Leading Cleaning Services Team</title>
+        <meta name="description" content="Join Tutchonce Cleaning Services team in Nigeria. Explore career opportunities in professional cleaning, facility management, and janitorial services. Competitive pay, training, and growth opportunities." />
+        <meta name="keywords" content="cleaning jobs Nigeria, careers Lagos cleaning, janitorial jobs Abuja, facility management jobs Nigeria, cleaning technician jobs Lagos, cleaning service careers Nigeria, professional cleaner jobs" />
+        <meta property="og:title" content="Careers at Tutchonce | Join Our Team" />
+        <meta property="og:description" content="Join Nigeria's leading cleaning services team. Competitive pay, professional training, and growth opportunities." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.tutchonce.com.ng/careers" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.tutchonce.com.ng/careers" />
       </Helmet>
       <Navbar />
       <div ref={sectionRef}>

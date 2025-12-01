@@ -87,9 +87,15 @@ const Blog = () => {
   return (
     <>
       <Helmet>
-        <title>Blog - Tutchonce Cleaning Services</title>
-        <meta name="description" content="Read our latest articles on cleaning tips, industry insights, and home maintenance advice from the experts at Tutchonce." />
-        <meta name="keywords" content="cleaning blog, home cleaning tips, commercial cleaning advice, Nigeria cleaning services" />
+        <title>Cleaning Tips & Insights Blog | Tutchonce Cleaning Services Nigeria</title>
+        <meta name="description" content="Expert cleaning tips, home maintenance guides, and industry insights from Nigeria's leading cleaning professionals. Learn deep cleaning techniques, eco-friendly practices, and more." />
+        <meta name="keywords" content="cleaning blog Nigeria, home cleaning tips Lagos, deep cleaning guide, commercial cleaning advice, eco-friendly cleaning tips, professional cleaning insights, house cleaning hacks, office cleaning tips Nigeria, post construction cleaning guide, fumigation advice Nigeria" />
+        <meta property="og:title" content="Cleaning Tips & Insights Blog | Tutchonce" />
+        <meta property="og:description" content="Expert cleaning tips and home maintenance advice from Nigeria's leading cleaning professionals." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.tutchonce.com.ng/blog" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.tutchonce.com.ng/blog" />
       </Helmet>
       
       <div className="min-h-screen bg-white">

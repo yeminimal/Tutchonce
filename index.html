@@ -42,27 +42,213 @@
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- Structured data for SEO -->
+    <!-- Enhanced Structured Data for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Tutchonce Cleaning Services",
-      "image": "/lovable-uploads/06012ea1-8e1f-43a9-9839-a10a76d6f3df.png",
-      "description": "Professional cleaning services across Nigeria",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "Nigeria"
-      },
-      "telephone": "+234 802 505 8426",
-      "email": "tutchoncecleaningservices@gmail.com",
-      "openingHours": "Mo-Su 08:00-20:00",
-      "url": "https://tutchonce.com",
-      "sameAs": [
-        "https://facebook.com/tutchoncecleaning",
-        "https://instagram.com/tutchoncecleaning",
-        "https://twitter.com/tutchonceclean"
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.tutchonce.com.ng/#business",
+          "name": "Tutchonce Cleaning Services",
+          "alternateName": "Tutchonce",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.tutchonce.com.ng/og-image.png",
+            "width": 1200,
+            "height": 630
+          },
+          "description": "Nigeria's premier professional cleaning company offering residential, commercial, post-construction, and facility management services with eco-friendly products and 100% satisfaction guarantee.",
+          "priceRange": "₦₦",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "NG",
+            "addressRegion": "Lagos",
+            "addressLocality": "Lagos"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "6.5244",
+            "longitude": "3.3792"
+          },
+          "telephone": "+234-802-505-8426",
+          "email": "tutchoncecleaningservices@gmail.com",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+234-802-505-8426",
+              "contactType": "customer service",
+              "areaServed": "NG",
+              "availableLanguage": ["en"]
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+234-803-722-6269",
+              "contactType": "sales",
+              "areaServed": "NG",
+              "availableLanguage": ["en"]
+            }
+          ],
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "08:00",
+            "closes": "20:00"
+          },
+          "url": "https://www.tutchonce.com.ng",
+          "logo": "https://www.tutchonce.com.ng/og-image.png",
+          "sameAs": [
+            "https://facebook.com/tutchoncecleaning",
+            "https://instagram.com/tutchoncecleaning",
+            "https://twitter.com/tutchonceclean",
+            "https://wa.me/2348025058426"
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Cleaning Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "General Cleaning",
+                  "description": "Standard dusting, vacuuming, mopping, sanitizing for homes and offices"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Facility Management",
+                  "description": "Comprehensive property maintenance and upkeep"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Post Construction Cleaning",
+                  "description": "Thorough after-build cleanup and debris removal"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Move In/Move Out Cleaning",
+                  "description": "Specialized deep cleaning for relocations"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Janitorial Services",
+                  "description": "Regular scheduled commercial cleaning contracts"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Fumigation & Pest Control",
+                  "description": "Professional pest elimination services"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.tutchonce.com.ng/#organization",
+          "name": "Tutchonce Cleaning Services",
+          "url": "https://www.tutchonce.com.ng",
+          "logo": "https://www.tutchonce.com.ng/og-image.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+234-802-505-8426",
+            "contactType": "customer service",
+            "email": "tutchoncecleaningservices@gmail.com"
+          },
+          "sameAs": [
+            "https://facebook.com/tutchoncecleaning",
+            "https://instagram.com/tutchoncecleaning",
+            "https://twitter.com/tutchonceclean"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.tutchonce.com.ng/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.tutchonce.com.ng/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://www.tutchonce.com.ng/#services"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Blog",
+              "item": "https://www.tutchonce.com.ng/blog"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Careers",
+              "item": "https://www.tutchonce.com.ng/careers"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.tutchonce.com.ng/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What areas do you serve in Nigeria?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We provide professional cleaning services across Nigeria, with primary focus on Lagos and Abuja. We also offer nationwide coverage for larger commercial projects."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you use eco-friendly cleaning products?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we use eco-safe, environmentally friendly cleaning products that are effective yet safe for your family, pets, and the environment."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is your satisfaction guarantee?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We offer a 100% satisfaction guarantee. If you're not completely satisfied with our service, we'll come back and make it right at no additional cost."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you offer same-day cleaning services?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer same-day cleaning services subject to availability. Contact us early in the day for the best chance of securing a same-day appointment."
+              }
+            }
+          ]
+        }
       ]
     }
     </script>

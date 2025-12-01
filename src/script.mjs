@@ -1,5 +1,5 @@
 // Import the Supabase client from the correct path
-import { supabase } from '@/supabase/supabaseClient';
+import { supabase } from '@/integrations/supabase/client';
 
 document.addEventListener("DOMContentLoaded", () => {
   // Floating Chat Icon Logic
